@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-user_ratings_df = pd.read_csv("../input/the-movies-dataset/ratings.csv")
+user_ratings_df = pd.read_csv("ratings.csv")
 user_ratings_df.head()
-movie_metadata = pd.read_csv("../input/the-movies-dataset/movies_metadata.csv")
+movie_metadata = pd.read_csv("moviemovies_metadata.csv")
 movie_metadata = movie_names[['title', 'genres']]
 movie_metadata.head()
 
@@ -35,5 +35,6 @@ def movie_recom(movie_name, matrix, cf_model, n_recs):
     return df
 # n denotes number of movies recommended.
 n= 10
+#mn takes user input to generate movie recommendation
 mn=input("ENTER MOVIE NAME")
-movie_recom('Batman', user_rating_matrix, cf_knn_model, n) 
+movie_recom(mn, user_rating_matrix, cf_knn_model, n) 
